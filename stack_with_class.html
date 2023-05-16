@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stack Operations with Classes</title>
+    <script>
+        // In this way classes are used in JS
+        class Stack{
+            item=[];
+            currentSize;
+            maxSize;
+            constructor(maximum){
+                this.currentSize=this.item.length;
+                this.maxSize=maximum;
+            }
+            push(val){
+                if(this.currentSize<this.maxSize){
+                    this.item[this.currentSize]=val;
+                    this.currentSize++;
+                }
+                else{
+                    alert("Stack is Full");
+                }          
+            }
+            pop(){
+                if(this.currentSize<=0){
+                    alert("The stack is empty");
+                }
+                else{
+                    this.currentSize--;
+                    this.item.length=this.currentSize;
+                }
+            }
+            display(){
+                console.log(this.item);
+            }
+        }
+        let str1 = new Stack(5);
+        str1.push(10); // These type of calling can be done from the code or from the console bar as well 
+        str1.display();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
