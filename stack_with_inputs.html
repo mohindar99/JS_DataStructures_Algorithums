@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stack in Java script</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+        let max = 5;
+
+        function push() {
+
+            let newVal=document.getElementById("newEl").value;
+
+            if (currentSize >= max) {
+                console.log("stack is full");
+            }else{
+            data[currentSize] = newVal;
+            currentSize++;
+            console.log('element added');
+            document.getElementById("newEl").value="";
+            }
+          
+        }  
+
+        function pop() {
+            if (currentSize <= 0) {
+                console.log("stack is already empty");
+            }
+            currentSize--;
+            data.length = currentSize;
+        }
+
+        function display(){
+            for(let i=0;i<=currentSize-1;i++){
+                console.log("The index is ",i, "and the stack value is ",data[i]);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Operations performed in the stack</h1>
+    <input type="text" placeholder="Enter the value" id="newEl"/>
+    <button onclick="push()">Add new elements</button>
+    <button onclick="pop()">Remove elements</button>
+    <button onclick="display()">Display elements</button>
+</body>
+
+</html>
