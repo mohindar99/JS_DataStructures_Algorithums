@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reverse string with stack in java script</title>
+    <script>
+        let data=[];
+        let currentSize=data.length;
+
+
+          function push(a){  
+                data[currentSize]=a;
+                currentSize++;
+          }
+
+          function pop(){
+            let lastRemovedItem = data[currentSize-1];
+            currentSize--;
+            data.length=currentSize;
+            return lastRemovedItem;
+
+          }
+          function reverseString(item){
+            for(let i=0;i<item.length;i++){
+                push(item[i]);
+            }
+        
+            for(let i=0;i<item.length;i++){
+                item[i]=pop();
+            }
+          }
+          let val = "samual";
+          val=val.split("");
+          reverseString(val);
+          console.log(val.join(""));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
