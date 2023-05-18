@@ -17,7 +17,6 @@
             }
         }
         function dequeue() {
-
             if (charlength <= 0) {
                 alert("The queue is empty");
             } else {
@@ -28,7 +27,28 @@
                 queue.length = charlength;
 
             }
+        }
+        function front(){
+            if(!isEmpty()){
+                console.log(queue[0]);
+            }else{
+                alert("queue is empty");
+            }
+        }
 
+        function rear(){
+            if(!isEmpty()){
+                console.log(queue[charlength-1])
+            }else{
+                console.log("the queue is empty");
+            }
+        }
+        function isEmpty(){
+            if(charlength<=0){
+                return true;
+            }else{
+                return false;
+            }
         }
         function display() {
             console.log(queue);
