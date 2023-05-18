@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Queue Data structures</title>
+    <script>
+        let queue = [];
+        let charlength = queue.length;
+        let max = 5;
+
+        function enqueue(newVal) {
+            if (charlength > max) {
+                alert("The queue had been full");
+            } else {
+                queue[charlength] = newVal;
+                charlength++;
+            }
+        }
+        function dequeue() {
+
+            if (charlength <= 0) {
+                alert("The queue is empty");
+            } else {
+                for (let i = 0; i < queue.length; i++) {
+                    queue[i] = queue[i + 1];
+                }
+                charlength--;
+                queue.length = charlength;
+
+            }
+
+        }
+        function display() {
+            console.log(queue);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
